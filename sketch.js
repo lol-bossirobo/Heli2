@@ -29,26 +29,30 @@ function setup() {
 	groundSprite=createSprite(width/2, height-35, width,10);
 	groundSprite.shapeColor=color(255)
 
-	p=createSprite(width/2,648,100,25);
-	p1=createSprite(350,610,25,100);
-	p2=createSprite(450,610,25,100);
+	p=createSprite(width/2,648,200,25);
+	p1=createSprite(300,610,25,100);
+	p2=createSprite(500,610,25,100);
 
 
 
 	engine = Engine.create();
 	world = engine.world;
 
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.1, isStatic:true});
+	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.3, isStatic:true});
 	World.add(world, packageBody);
 	
-	p = Bodies.rectangle(width/2,648,100,25);
+	p = Bodies.rectangle(width/2,648,600,25,{isStatic:false});
+	
 	World.add(world,p);
 
-	p1 = Bodies.rectangle(350,610,35,100);
-	World.add(world,p1);
+	p = Bodies.rectangle(100,610,25,200,{isStatic:false});
+	
+	World.add(world,p);
 
-	p2 = Bodies.rectangle(450,610,25,100);
-	World.add(world,p2);
+	p = Bodies.rectangle(700,610,25,200,{isStatic:false});
+
+	World.add(world,p);
+	
 
 	//Create a Ground
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
